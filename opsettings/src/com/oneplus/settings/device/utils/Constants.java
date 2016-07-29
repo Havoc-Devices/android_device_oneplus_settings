@@ -60,6 +60,7 @@ public class Constants {
     public static final String KEY_NIGHT_SWITCH = "night";
     public static final String KEY_ONEPLUS_SWITCH = "oneplus_mode";
     public static final String KEY_DCI_SWITCH = "dci";
+    public static final String KEY_HBM_SWITCH = "hbm";
 
     // Holds <preference_key> -> <proc_node> mapping
     public static final Map<String, String> sBooleanNodePreferenceMap = new HashMap<>();

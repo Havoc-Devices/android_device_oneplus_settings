@@ -59,6 +59,10 @@
                     android:targetClass="com.oneplus.settings.device.PanelSettingsActivity" />
         </Preference>
 
+        <SwitchPreference
+            android:key="hbm"
+            android:title="@string/hbm_mode_title" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

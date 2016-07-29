@@ -16,21 +16,24 @@
 
 package com.oneplus.settings.device;
 
-import com.oneplus.settings.device.utils.NodePreferenceActivity;
-
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.preference.Preference;
 import android.preference.SwitchPreference;
+import android.preference.TwoStatePreference;
 import android.widget.ListView;
+
+import com.oneplus.settings.device.utils.Constants;
+import com.oneplus.settings.device.utils.NodePreferenceActivity;
 
 public class DeviceSettings extends NodePreferenceActivity {
 
     private static final String KEY_HAPTIC_FEEDBACK = "touchscreen_gesture_haptic_feedback";
 
     private SwitchPreference mHapticFeedback;
+    private TwoStatePreference mHBMModeSwitch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,11 @@ public class DeviceSettings extends NodePreferenceActivity {
 
         mHapticFeedback = (SwitchPreference) findPreference(KEY_HAPTIC_FEEDBACK);
         mHapticFeedback.setOnPreferenceChangeListener(this);
+
+        mHBMModeSwitch = (TwoStatePreference) findPreference(Constants.KEY_HBM_SWITCH);
+        mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
+        mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled(this));
+        mHBMModeSwitch.setOnPreferenceChangeListener(new HBMModeSwitch());
     }
 
     @Override

@@ -117,6 +117,11 @@ public class Startup extends BroadcastReceiver {
 
         enabled = sharedPrefs.getBoolean(Constants.KEY_NIGHT_SWITCH, false);
         restore(NightModeSwitch.getFile(), enabled);
+
+        enabled = sharedPrefs.getBoolean(Constants.KEY_HBM_SWITCH, false);
+        if (enabled) {
+            restore(HBMModeSwitch.getFile(), "2");
+        }
     }
 
     static boolean hasTouchscreenGestures () {
