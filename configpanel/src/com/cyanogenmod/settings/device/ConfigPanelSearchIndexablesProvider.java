@@ -42,9 +42,6 @@ public class ConfigPanelSearchIndexablesProvider extends SearchIndexablesProvide
     public static final int SEARCH_IDX_TOUCHSCREEN_PANEL = 3;
 
     private static SearchIndexableResource[] INDEXABLE_RES = new SearchIndexableResource[]{
-            new SearchIndexableResource(1, R.xml.button_panel,
-                    ButtonSettings.class.getName(),
-                    R.drawable.ic_settings_additional_buttons),
             new SearchIndexableResource(1, R.xml.gesture_panel,
                     GesturePadSettings.class.getName(),
                     R.drawable.ic_settings_gestures),
