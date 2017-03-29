@@ -16,22 +16,25 @@
 
 package com.oneplus.settings.device;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.provider.Settings;
-import android.preference.ListPreference;
-import android.preference.Preference;
-import android.preference.PreferenceCategory;
-import android.preference.SwitchPreference;
-import android.preference.TwoStatePreference;
-import android.widget.ListView;
+import android.support.v14.preference.PreferenceFragment;
+import android.support.v14.preference.SwitchPreference;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v7.preference.PreferenceCategory;
+import android.text.TextUtils;
+import android.view.MenuItem;
+
+import com.android.settingslib.drawer.SettingsDrawerActivity;
 
 import com.oneplus.settings.device.utils.Constants;
-import com.oneplus.settings.device.utils.NodePreferenceActivity;
+import com.oneplus.settings.device.utils.FileUtils;
 
-public class DeviceSettings extends NodePreferenceActivity {
+public class DeviceSettings extends PreferenceFragment
+        implements OnPreferenceChangeListener {
 
     private static final String KEY_HAPTIC_FEEDBACK = "touchscreen_gesture_haptic_feedback";
     private static final String SPECTRUM_KEY = "spectrum";
@@ -39,26 +42,18 @@ public class DeviceSettings extends NodePreferenceActivity {
     private static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
 
     private SwitchPreference mHapticFeedback;
-    private TwoStatePreference mHBMModeSwitch;
     private ListPreference mSpectrum;
     private PreferenceCategory mSpectrumCategory;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.device_settings);
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 
-        ListView lv = getListView();
-        lv.setDivider(new ColorDrawable(Color.TRANSPARENT));
-        lv.setDividerHeight(0);
+        addPreferencesFromResource(R.xml.device_settings);
+        getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 
         mHapticFeedback = (SwitchPreference) findPreference(KEY_HAPTIC_FEEDBACK);
         mHapticFeedback.setOnPreferenceChangeListener(this);
-
-        mHBMModeSwitch = (TwoStatePreference) findPreference(Constants.KEY_HBM_SWITCH);
-        mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
-        mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled(this));
-        mHBMModeSwitch.setOnPreferenceChangeListener(new HBMModeSwitch());
+        mHapticFeedback.setChecked(Settings.System.getInt(getActivity().getContentResolver(), KEY_HAPTIC_FEEDBACK, 1) != 0);
 
         mSpectrum = (ListPreference) findPreference(SPECTRUM_KEY);
         if( mSpectrum != null ) {
@@ -78,24 +73,67 @@ public class DeviceSettings extends NodePreferenceActivity {
         String strvalue;
         if (KEY_HAPTIC_FEEDBACK.equals(key)) {
             final boolean value = (Boolean) newValue;
-            Settings.System.putInt(getContentResolver(), KEY_HAPTIC_FEEDBACK, value ? 1 : 0);
+            Settings.System.putInt(getActivity().getContentResolver(), KEY_HAPTIC_FEEDBACK, value ? 1 : 0);
             return true;
-        } else if (SPECTRUM_KEY.equals(key)) {
+        }
+
+        if (SPECTRUM_KEY.equals(key)) {
             strvalue = (String) newValue;
             SystemProperties.set(SPECTRUM_SYSTEM_PROPERTY, strvalue);
             return true;
         }
-        return super.onPreferenceChange(preference, newValue);
+
+        String node = Constants.sBooleanNodePreferenceMap.get(key);
+        if (!TextUtils.isEmpty(node) && FileUtils.isFileWritable(node)) {
+            Boolean value = (Boolean) newValue;
+            FileUtils.writeLine(node, value ? "1" : "0");
+            return true;
+        }
+        node = Constants.sStringNodePreferenceMap.get(key);
+        if (!TextUtils.isEmpty(node) && FileUtils.isFileWritable(node)) {
+            FileUtils.writeLine(node, (String) newValue);
+            return true;
+        }
+        return false;
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    public void addPreferencesFromResource(int preferencesResId) {
+        super.addPreferencesFromResource(preferencesResId);
+        // Initialize node preferences
+        for (String pref : Constants.sBooleanNodePreferenceMap.keySet()) {
+            SwitchPreference b = (SwitchPreference) findPreference(pref);
+            if (b == null) continue;
+            b.setOnPreferenceChangeListener(this);
+            String node = Constants.sBooleanNodePreferenceMap.get(pref);
+            if (FileUtils.isFileReadable(node)) {
+                String curNodeValue = FileUtils.readOneLine(node);
+                b.setChecked(curNodeValue.equals("1"));
+            } else {
+                b.setEnabled(false);
+            }
+        }
+        for (String pref : Constants.sStringNodePreferenceMap.keySet()) {
+            ListPreference l = (ListPreference) findPreference(pref);
+            if (l == null) continue;
+            l.setOnPreferenceChangeListener(this);
+            String node = Constants.sStringNodePreferenceMap.get(pref);
+            if (FileUtils.isFileReadable(node)) {
+                l.setValue(FileUtils.readOneLine(node));
+            } else {
+                l.setEnabled(false);
+            }
+        }
+    }
 
-        // If running on a phone, remove padding around the listview
-        getListView().setPadding(0, 0, 0, 0);
-
-        mHapticFeedback.setChecked(
-                Settings.System.getInt(getContentResolver(), KEY_HAPTIC_FEEDBACK, 1) != 0);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        // Respond to the action bar's Up/Home button
+        case android.R.id.home:
+            getActivity().finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

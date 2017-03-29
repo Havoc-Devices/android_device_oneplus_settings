@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 The CyanogenMod Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,20 +19,25 @@ package com.oneplus.settings.device.utils;
 import android.util.Log;
 
 import java.io.BufferedReader;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public final class FileUtils {
     private static final String TAG = "FileUtils";
 
     private FileUtils() {
-        // this class is not supposed to be instantiated
+        // This class is not supposed to be instantiated
     }
 
     /**
-     * Reads the first line of text from the given file
+     * Reads the first line of text from the given file.
+     * Reference {@link BufferedReader#readLine()} for clarification on what a line is
+     *
+     * @return the read line contents, or null on failure
      */
     public static String readOneLine(String fileName) {
         String line = null;
@@ -41,6 +46,8 @@ public final class FileUtils {
         try {
             reader = new BufferedReader(new FileReader(fileName), 512);
             line = reader.readLine();
+        } catch (FileNotFoundException e) {
+            Log.w(TAG, "No such file " + fileName + " for reading", e);
         } catch (IOException e) {
             Log.e(TAG, "Could not read from file " + fileName, e);
         } finally {
@@ -49,7 +56,7 @@ public final class FileUtils {
                     reader.close();
                 }
             } catch (IOException e) {
-                // ignored, not much we can do anyway
+                // Ignored, not much we can do anyway
             }
         }
 
@@ -62,19 +69,57 @@ public final class FileUtils {
      * @return true on success, false on failure
      */
     public static boolean writeLine(String fileName, String value) {
+        BufferedWriter writer = null;
+
         try {
-            FileOutputStream fos = new FileOutputStream(fileName);
-            fos.write(value.getBytes());
-            fos.flush();
-            fos.close();
+            writer = new BufferedWriter(new FileWriter(fileName));
+            writer.write(value);
         } catch (FileNotFoundException e) {
             Log.w(TAG, "No such file " + fileName + " for writing", e);
             return false;
         } catch (IOException e) {
             Log.e(TAG, "Could not write to file " + fileName, e);
             return false;
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close();
+                }
+            } catch (IOException e) {
+                // Ignored, not much we can do anyway
+            }
         }
 
         return true;
+    }
+
+    /**
+     * Checks whether the given file exists
+     *
+     * @return true if exists, false if not
+     */
+    public static boolean fileExists(String fileName) {
+        final File file = new File(fileName);
+        return file.exists();
+    }
+
+    /**
+     * Checks whether the given file is readable
+     *
+     * @return true if readable, false if not
+     */
+    public static boolean isFileReadable(String fileName) {
+        final File file = new File(fileName);
+        return file.exists() && file.canRead();
+    }
+
+    /**
+     * Checks whether the given file is writable
+     *
+     * @return true if writable, false if not
+     */
+    public static boolean isFileWritable(String fileName) {
+        final File file = new File(fileName);
+        return file.exists() && file.canWrite();
     }
 }

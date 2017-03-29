@@ -14,7 +14,8 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="@string/screen_gestures_panel_title">
 
     <PreferenceCategory
         android:title="@string/buttons_dashboard_summary">
@@ -72,10 +73,6 @@
                     android:targetPackage="com.oneplus.settings.device"
                     android:targetClass="com.oneplus.settings.device.PanelSettingsActivity" />
         </Preference>
-
-        <SwitchPreference
-            android:key="hbm"
-            android:title="@string/hbm_mode_title" />
 
     </PreferenceCategory>
 

@@ -40,7 +40,7 @@ public class ConfigPanelSearchIndexablesProvider extends SearchIndexablesProvide
 
     private static SearchIndexableResource[] INDEXABLE_RES = new SearchIndexableResource[]{
             new SearchIndexableResource(1, R.xml.device_settings,
-                    DeviceSettings.class.getName(),
+                    DeviceSettingsActivity.class.getName(),
                     R.drawable.ic_launcher_settings),
     };
 

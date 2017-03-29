@@ -82,6 +82,8 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
             Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.panel_modes, container, false);
 
+        getActivity().getActionBar().setTitle(R.string.panel_category_title);
+
         viewPager = (ViewPager) rootView.findViewById(R.id.viewPager);
         sliderDotspanel = (LinearLayout) rootView.findViewById(R.id.SliderDots);
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getActivity());
