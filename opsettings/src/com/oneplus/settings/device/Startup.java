@@ -85,22 +85,7 @@ public class Startup extends BroadcastReceiver {
                 disableComponent(context, DeviceSettingsActivity.class.getName());
             } else {
                 enableComponent(context, DeviceSettingsActivity.class.getName());
-                // Restore nodes to saved preference values
-                for (String pref : Constants.sButtonPrefKeys) {
-                    String node, value;
-                    if (Constants.sStringNodePreferenceMap.containsKey(pref)) {
-                        node = Constants.sStringNodePreferenceMap.get(pref);
-                        value = Constants.getPreferenceString(context, pref);
-                    } else {
-                        node = Constants.sBooleanNodePreferenceMap.get(pref);
-                        value = Constants.isPreferenceEnabled(context, pref) ?
-                                "1" : "0";
-                    }
-                    if (!FileUtils.writeLine(node, value)) {
-                        Log.w(TAG, "Write to node " + node +
-                                " failed while restoring saved preference values");
-                    }
-                }
+                DeviceSettings.restoreSliderStates(context);
             }
         }
 
@@ -130,9 +115,7 @@ public class Startup extends BroadcastReceiver {
     }
 
     private boolean hasButtonProcs () {
-        return (new File(Constants.NOTIF_SLIDER_TOP_NODE).exists() &&
-                new File(Constants.NOTIF_SLIDER_MIDDLE_NODE).exists() &&
-                new File(Constants.NOTIF_SLIDER_BOTTOM_NODE).exists());
+        return new File(Constants.NOTIF_SLIDER_NODE).exists();
     }
 
     private void disableComponent(Context context, String component) {

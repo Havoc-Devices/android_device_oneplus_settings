@@ -43,7 +43,7 @@
     <string name="notification_slider_mode_total_silence">Total silence</string>
     <string name="notification_slider_mode_priority_only">Priority only</string>
     <string name="notification_slider_mode_vibration">Vibration</string>
-    <string name="notification_slider_mode_none">None</string>
+    <string name="notification_slider_mode_none">All</string>
 
     <!-- Screen calibration settings -->
     <string name="graphics_title">Display</string>
@@ -60,4 +60,29 @@
     <string name="spectrum_category_title">Spectrum</string>
     <string name="spectrum_title">Kernel Power Profile</string>
     <string name="spectrum_summary">%1$s</string>
+
+    <!-- Notification slider -->
+    <string name="notification_slider_usage_title">Use slider for</string>
+    <string name="notification_slider_for_notification">Notification</string>
+    <string name="notification_slider_for_flashlight">Flashlight</string>
+    <string name="notification_slider_for_brightness">Brightness</string>
+    <string name="notification_slider_for_rotation">Rotation</string>
+    <string name="notification_slider_for_ringer">Ringer</string>
+
+    <string name="notification_slider_flashlight_off">Off</string>
+    <string name="notification_slider_flashlight_on">On</string>
+    <string name="notification_slider_flashlight_blink">Blink</string>
+
+    <string name="notification_slider_brightness_auto">Auto</string>
+    <string name="notification_slider_brightness_brightest">Brightest</string>
+    <string name="notification_slider_brightness_darkest">Darkest</string>
+
+    <string name="notification_slider_rotation_auto">Auto</string>
+    <string name="notification_slider_rotation_portrait">Portrait</string>
+    <string name="notification_slider_rotation_landscape_90">Landscape (90°)</string>
+    <string name="notification_slider_rotation_landscape_270">Landscape (270°)</string>
+
+    <string name="notification_slider_ringer_normal">Normal</string>
+    <string name="notification_slider_ringer_vibrate">Vibrate</string>
+    <string name="notification_slider_ringer_silent">Silent</string>
 </resources>
