@@ -48,7 +48,13 @@ public class NodePreferenceActivity extends PreferenceActivity
         String node = Constants.sBooleanNodePreferenceMap.get(preference.getKey());
         if (!TextUtils.isEmpty(node)) {
             Boolean value = (Boolean) newValue;
-            FileUtils.writeLine(node, value ? "1" : "0");
+            if (node.equals(Constants.TOUCHSCREEN_DOUBLE_SWIPE_NODE)) {
+                for (String music_nodes: Constants.TOUCHSCREEN_MUSIC_GESTURES_ARRAY) {
+                    FileUtils.writeLine(music_nodes, value ? "1" : "0");
+                }
+            }
+            else
+                FileUtils.writeLine(node, value ? "1" : "0");
             return true;
         }
         node = Constants.sStringNodePreferenceMap.get(preference.getKey());
