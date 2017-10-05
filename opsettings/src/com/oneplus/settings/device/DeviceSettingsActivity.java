@@ -17,19 +17,15 @@
 
 package com.oneplus.settings.device;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
 
-import com.android.settingslib.drawer.SettingsDrawerActivity;
-
-public class DeviceSettingsActivity extends SettingsDrawerActivity {
-
+public class DeviceSettingsActivity extends PreferenceActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getFragmentManager().beginTransaction().replace(R.id.content_frame,
+        getFragmentManager().beginTransaction().replace(android.R.id.content,
                 new DeviceSettings()).commit();
     }
 }

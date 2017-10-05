@@ -24,10 +24,12 @@ LOCAL_PRIVILEGED_MODULE := true
 LOCAL_PACKAGE_NAME := OPSettings
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
-    android-support-v14-preference \
+    android-support-v4 \
     android-support-v7-appcompat \
     android-support-v7-preference \
-    android-support-v7-recyclerview
+    android-support-v7-recyclerview \
+    android-support-v13 \
+    android-support-v14-preference
 
 LOCAL_AAPT_FLAGS := \
     --auto-add-overlay \
@@ -47,7 +49,5 @@ LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 LOCAL_MODULE_TAGS := optional
 LOCAL_PRIVATE_PLATFORM_APIS := true
-
-include frameworks/base/packages/SettingsLib/common.mk
 
 include $(BUILD_PACKAGE)

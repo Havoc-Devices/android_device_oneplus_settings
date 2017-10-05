@@ -28,8 +28,6 @@ import android.support.v7.preference.PreferenceCategory;
 import android.text.TextUtils;
 import android.view.MenuItem;
 
-import com.android.settingslib.drawer.SettingsDrawerActivity;
-
 import com.oneplus.settings.device.utils.Constants;
 import com.oneplus.settings.device.utils.FileUtils;
 
