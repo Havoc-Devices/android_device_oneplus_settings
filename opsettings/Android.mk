@@ -26,6 +26,7 @@ LOCAL_PRIVATE_PLATFORM_APIS := true
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v4 \
-    android-support-v7-appcompat
+    android-support-v7-appcompat \
+    android-support-v7-preference
 
 include $(BUILD_PACKAGE)
