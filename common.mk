@@ -14,15 +14,9 @@
 # limitations under the License.
 #
 
-# overlays
+# Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Keyhandler
 PRODUCT_PACKAGES += \
-    OPSettings \
-    com.oneplus.keyhandler
-
-PRODUCT_SYSTEM_SERVER_JARS += com.oneplus.keyhandler
-
-# never dexopt the keyhandler
-$(call add-product-dex-preopt-module-config,com.oneplus.keyhandler,disable)
+    OPSettings

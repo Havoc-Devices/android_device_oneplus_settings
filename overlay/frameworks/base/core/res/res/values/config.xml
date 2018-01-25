@@ -22,7 +22,7 @@
     <!-- The list absolute paths of jar/apk files containing the device specific handlers,
          delimited by File.pathSeparator, which defaults to ":" on Android -->
     <string-array name="config_deviceKeyHandlerLibs" translatable="false">
-        <item>/system/framework/com.oneplus.keyhandler.jar</item>
+        <item>/system/priv-app/OPSettings/OPSettings.apk</item>
     </string-array>
 
     <!-- Full qualified name of the class that implements
