@@ -92,6 +92,8 @@
                     android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
+
+        <activity android:name=".KeyHandler" />
     </application>
 
 </manifest>
