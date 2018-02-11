@@ -61,6 +61,7 @@ import com.oneplus.settings.device.slider.FlashlightController;
 import com.oneplus.settings.device.slider.BrightnessController;
 import com.oneplus.settings.device.slider.RotationController;
 import com.oneplus.settings.device.slider.RingerController;
+import com.oneplus.settings.device.slider.NotificationRingerController;
 
 import java.util.Arrays;
 
@@ -123,6 +124,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private final BrightnessController mBrightnessController;
     private final RotationController mRotationController;
     private final RingerController mRingerController;
+    private final NotificationRingerController mNotificationRingerController;
 
     private SliderControllerBase mSliderController;
 
@@ -158,6 +160,10 @@ public class KeyHandler implements DeviceKeyHandler {
                     break;
                 case RingerController.ID:
                     mSliderController = mRingerController;
+                    mSliderController.update(actions);
+                    break;
+                case NotificationRingerController.ID:
+                    mSliderController = mNotificationRingerController;
                     mSliderController.update(actions);
                     break;
             }
@@ -199,6 +205,7 @@ public class KeyHandler implements DeviceKeyHandler {
         mBrightnessController = new BrightnessController(context);
         mRotationController = new RotationController(context);
         mRingerController = new RingerController(context);
+        mNotificationRingerController = new NotificationRingerController(context);
 
         mContext.registerReceiver(mUpdateReceiver,
                 new IntentFilter(ACTION_UPDATE_SLIDER_SETTINGS));

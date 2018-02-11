@@ -68,6 +68,7 @@
     <string name="notification_slider_for_brightness">Brightness</string>
     <string name="notification_slider_for_rotation">Rotation</string>
     <string name="notification_slider_for_ringer">Ringer</string>
+    <string name="notification_slider_for_notification_ringer">Notification and ringer</string>
 
     <string name="notification_slider_flashlight_off">Off</string>
     <string name="notification_slider_flashlight_on">On</string>

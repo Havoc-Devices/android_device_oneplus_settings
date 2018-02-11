@@ -218,6 +218,10 @@ public class DeviceSettings extends PreferenceFragment
                 return updateSliderActions(
                         R.array.notification_slider_ringer_entries,
                         R.array.notification_slider_ringer_entry_values);
+            case Constants.NOTIF_SLIDER_FOR_NOTIFICATION_RINGER:
+                return updateSliderActions(
+                        R.array.notification_ringer_slider_mode_entries,
+                        R.array.notification_ringer_slider_mode_entry_values);
             default:
                 return false;
         }
@@ -378,6 +382,8 @@ public class DeviceSettings extends PreferenceFragment
                 return R.array.config_defaultSliderActionsForRotation;
             case Constants.NOTIF_SLIDER_FOR_RINGER:
                 return R.array.config_defaultSliderActionsForRinger;
+            case Constants.NOTIF_SLIDER_FOR_NOTIFICATION_RINGER:
+                return R.array.config_defaultSliderActionsForNotificationRinger;
             default:
                 return 0;
         }
