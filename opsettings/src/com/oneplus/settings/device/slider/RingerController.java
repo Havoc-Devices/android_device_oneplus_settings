@@ -60,6 +60,6 @@ public final class RingerController extends SliderControllerBase {
 
     @Override
     public void reset() {
-        // do nothing, just leave the phone in the current mode
+        mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
     }
 }
