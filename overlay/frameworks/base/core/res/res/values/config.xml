@@ -21,10 +21,14 @@
 
     <!-- The list absolute paths of jar/apk files containing the device specific handlers,
          delimited by File.pathSeparator, which defaults to ":" on Android -->
-    <string name="config_deviceKeyHandlerLib" translatable="false">/system/framework/com.cyanogenmod.keyhandler.jar</string>
+    <string-array name="config_deviceKeyHandlerLibs" translatable="false">
+        <item>/system/framework/com.cyanogenmod.keyhandler.jar</item>
+    </string-array>
 
     <!-- Full qualified name of the class that implements
          com.android.internal.os.DeviceKeyHandler interface. -->
-    <string name="config_deviceKeyHandlerClass" translatable="false">com.cyanogenmod.settings.device.KeyHandler</string>
+    <string-array name="config_deviceKeyHandlerClasses" translatable="false">
+        <item>com.cyanogenmod.settings.device.KeyHandler</item>
+    </string-array>
 
 </resources>
