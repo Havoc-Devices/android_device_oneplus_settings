@@ -20,10 +20,7 @@
           android:versionCode="6"
           android:versionName="2.4" >
 
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.INJECT_EVENTS"/>
-    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
 
     <uses-sdk
         android:minSdkVersion="24" />
@@ -48,47 +45,15 @@
             </intent-filter>
         </provider>
 
-        <service android:name=".OclickService" />
-        <activity
-            android:name=".BluetoothInputSettings"
-            android:launchMode="singleTop"
-
-            android:label="@string/oclick_panel_title">
-            <intent-filter>
-                <action android:name="com.cyanogenmod.action.LAUNCH_BLUETOOTH_INPUT_SETTINGS" />
-            </intent-filter>
-            <meta-data
-                android:name="com.android.settings.title"
-                android:resource="@string/oclick_panel_title"/>
-        </activity>
-
         <activity
             android:name=".TouchscreenGestureSettings"
             android:label="@string/screen_gestures_panel_title">
-            <intent-filter>
-                <action android:name="com.cyanogenmod.action.LAUNCH_TOUCHSCREEN_GESTURE_SETTINGS" />
-            </intent-filter>
-            <meta-data
-                android:name="com.android.settings.title"
-                android:resource="@string/screen_gestures_panel_title"/>
-        </activity>
-
-        <activity
-            android:name=".GesturePadSettings"
-            android:label="@string/backpad_panel_title">
-            <intent-filter>
-                <action android:name="com.cyanogenmod.action.LAUNCH_GESTURE_PAD_SETTINGS" />
-            </intent-filter>
-            <meta-data
-                android:name="com.android.settings.title"
-                android:resource="@string/backpad_panel_title"/>
         </activity>
 
         <receiver android:name=".Startup" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.PRE_BOOT_COMPLETED" />
-                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
                 <action android:name="cyanogenmod.intent.action.GESTURE_CAMERA" />
             </intent-filter>
         </receiver>
