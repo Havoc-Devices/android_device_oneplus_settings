@@ -72,8 +72,7 @@ public class Startup extends BroadcastReceiver {
             }
 
             // Disable backtouch settings if needed
-            if (!context.getResources().getBoolean(
-                        com.android.internal.R.bool.config_enableGestureService)) {
+            if (hasGestureService(context)) {
                 disableComponent(context, GesturePadSettings.class.getName());
             } else {
                 IBinder b = ServiceManager.getService("gesture");
@@ -147,18 +146,27 @@ public class Startup extends BroadcastReceiver {
                 InputManager.INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINISH);
     }
 
-    private boolean hasTouchscreenGestures() {
+    static boolean hasGestureService(Context context) {
+        return !context.getResources().getBoolean(
+                com.android.internal.R.bool.config_enableGestureService);
+    }
+
+    static  boolean hasTouchscreenGestures() {
         return new File(Constants.TOUCHSCREEN_CAMERA_NODE).exists() &&
             new File(Constants.TOUCHSCREEN_MUSIC_NODE).exists() &&
             new File(Constants.TOUCHSCREEN_FLASHLIGHT_NODE).exists();
     }
 
-    private void disableComponent(Context context, String component) {
+    static void disableComponent(Context context, String component) {
         ComponentName name = new ComponentName(context, component);
         PackageManager pm = context.getPackageManager();
         pm.setComponentEnabledSetting(name,
                 PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                 PackageManager.DONT_KILL_APP);
+    }
+
+    static boolean hasOClick() {
+        return Build.MODEL.equals("N1") || Build.MODEL.equals("N3");
     }
 
     private void enableComponent(Context context, String component) {
@@ -170,10 +178,6 @@ public class Startup extends BroadcastReceiver {
                     PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
                     PackageManager.DONT_KILL_APP);
         }
-    }
-
-    private static boolean hasOClick() {
-        return Build.MODEL.equals("N1") || Build.MODEL.equals("N3");
     }
 
     private void updateOClickServiceState(Context context) {
