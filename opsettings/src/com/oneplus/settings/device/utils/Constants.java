@@ -55,6 +55,12 @@ public class Constants {
     public static final String NOTIF_SLIDER_MIDDLE_NODE = "/proc/tri-state-key/keyCode_middle";
     public static final String NOTIF_SLIDER_BOTTOM_NODE = "/proc/tri-state-key/keyCode_bottom";
 
+    // Display modes
+    public static final String KEY_SRGB_SWITCH = "srgb";
+    public static final String KEY_NIGHT_SWITCH = "night";
+    public static final String KEY_ONEPLUS_SWITCH = "oneplus_mode";
+    public static final String KEY_DCI_SWITCH = "dci";
+
     // Holds <preference_key> -> <proc_node> mapping
     public static final Map<String, String> sBooleanNodePreferenceMap = new HashMap<>();
     public static final Map<String, String> sStringNodePreferenceMap = new HashMap<>();

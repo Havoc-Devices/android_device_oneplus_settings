@@ -46,6 +46,22 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="graphics"
+        android:title="@string/graphics_title">
+
+        <Preference
+            android:key="panel_category"
+            android:title="@string/panel_category_title"
+            android:summary="@string/panel_category_summary"
+            android:persistent="false" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.oneplus.settings.device"
+                    android:targetClass="com.oneplus.settings.device.PanelSettingsActivity" />
+        </Preference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/touchscreen_extras">
 
         <SwitchPreference

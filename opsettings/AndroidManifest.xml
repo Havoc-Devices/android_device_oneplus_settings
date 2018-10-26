@@ -20,6 +20,8 @@
           android:versionCode="6"
           android:versionName="2.4" >
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.INJECT_EVENTS"/>
 
     <uses-sdk
@@ -59,6 +61,16 @@
                 android:resource="@drawable/ic_settings_oneplus" />
 	        <meta-data android:name="com.android.settings.summary"
                 android:resource="@string/screen_gestures_panel_summary" />
+        </activity>
+
+        <activity
+            android:name="com.oneplus.settings.device.PanelSettingsActivity"
+            android:exported="false"
+            android:label="@string/panel_category_title" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
 
         <receiver android:name=".Startup" >

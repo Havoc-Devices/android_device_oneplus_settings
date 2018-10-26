@@ -24,4 +24,8 @@ LOCAL_PACKAGE_NAME := OPSettings
 LOCAL_MODULE_TAGS := optional
 LOCAL_PRIVATE_PLATFORM_APIS := true
 
+LOCAL_STATIC_ANDROID_LIBRARIES := \
+    android-support-v4 \
+    android-support-v7-appcompat
+
 include $(BUILD_PACKAGE)

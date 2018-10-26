@@ -20,7 +20,9 @@ import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.preference.PreferenceManager;
 import android.os.ServiceManager;
 import android.util.Log;
 
@@ -32,6 +34,22 @@ import com.oneplus.settings.device.utils.FileUtils;
 public class Startup extends BroadcastReceiver {
 
     private static final String TAG = Startup.class.getSimpleName();
+
+    private void restore(String file, boolean enabled) {
+        if (file == null) {
+            return;
+        }
+        if (enabled) {
+            Utils.writeValue(file, "1");
+        }
+    }
+
+    private void restore(String file, String value) {
+        if (file == null) {
+            return;
+        }
+        Utils.writeValue(file, value);
+    }
 
     @Override
     public void onReceive(final Context context, final Intent intent) {
@@ -86,6 +104,19 @@ public class Startup extends BroadcastReceiver {
                 }
             }
         }
+
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        boolean enabled = sharedPrefs.getBoolean(Constants.KEY_SRGB_SWITCH, false);
+        restore(SRGBModeSwitch.getFile(), enabled);
+
+        enabled = sharedPrefs.getBoolean(Constants.KEY_DCI_SWITCH, false);
+        restore(DCIModeSwitch.getFile(), enabled);
+
+        enabled = sharedPrefs.getBoolean(Constants.KEY_ONEPLUS_SWITCH, false);
+        restore(OneplusModeSwitch.getFile(), enabled);
+
+        enabled = sharedPrefs.getBoolean(Constants.KEY_NIGHT_SWITCH, false);
+        restore(NightModeSwitch.getFile(), enabled);
     }
 
     static boolean hasTouchscreenGestures () {
