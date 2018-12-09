@@ -46,6 +46,20 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="spectrum_category"
+        android:title="@string/spectrum_category_title">
+
+        <ListPreference
+            android:key="spectrum"
+            android:title="@string/spectrum_title"
+            android:summary="@string/spectrum_summary"
+            android:defaultValue="0"
+            android:entries="@array/spectrum_profiles"
+            android:entryValues="@array/spectrum_values" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="graphics"
         android:title="@string/graphics_title">
 

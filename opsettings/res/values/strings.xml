@@ -58,4 +58,9 @@
     <string name="night_mode_title">Neutral</string>
     <string name="oneplus_mode_title">OnePlus</string>
 	<string name="hbm_mode_title">High Brightness mode</string>
+
+    <!-- Spectrum Profiles -->
+    <string name="spectrum_category_title">Spectrum</string>
+    <string name="spectrum_title">Kernel Power Profile</string>
+    <string name="spectrum_summary">%1$s</string>
 </resources>
