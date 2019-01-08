@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package com.oneplus.settings.device;
 
-import com.cyanogenmod.settings.device.utils.NodePreferenceActivity;
+import com.oneplus.settings.device.utils.NodePreferenceActivity;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -26,7 +26,8 @@ import android.preference.Preference;
 import android.preference.SwitchPreference;
 import android.widget.ListView;
 
-public class TouchscreenGestureSettings extends NodePreferenceActivity {
+public class DeviceSettings extends NodePreferenceActivity {
+
     private static final String KEY_HAPTIC_FEEDBACK = "touchscreen_gesture_haptic_feedback";
 
     private SwitchPreference mHapticFeedback;
@@ -34,7 +35,7 @@ public class TouchscreenGestureSettings extends NodePreferenceActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.touchscreen_panel);
+        addPreferencesFromResource(R.xml.device_settings);
 
         ListView lv = getListView();
         lv.setDivider(new ColorDrawable(Color.TRANSPARENT));

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package com.oneplus.settings.device;
 
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -26,8 +26,8 @@ import android.util.Log;
 
 import java.io.File;
 
-import com.cyanogenmod.settings.device.utils.Constants;
-import com.cyanogenmod.settings.device.utils.FileUtils;
+import com.oneplus.settings.device.utils.Constants;
+import com.oneplus.settings.device.utils.FileUtils;
 
 public class Startup extends BroadcastReceiver {
 
@@ -40,9 +40,9 @@ public class Startup extends BroadcastReceiver {
                 || Intent.ACTION_PRE_BOOT_COMPLETED.equals(action)) {
             // Disable touchscreen gesture settings if needed
             if (!hasTouchscreenGestures()) {
-                disableComponent(context, TouchscreenGestureSettings.class.getName());
+                disableComponent(context, DeviceSettings.class.getName());
             } else {
-                enableComponent(context, TouchscreenGestureSettings.class.getName());
+                enableComponent(context, DeviceSettings.class.getName());
                 // Restore nodes to saved preference values
                 for (String pref : Constants.sGesturePrefKeys) {
                     boolean value = Constants.isPreferenceEnabled(context, pref);
@@ -64,9 +64,9 @@ public class Startup extends BroadcastReceiver {
 
             // Disable button settings if needed
             if (!hasButtonProcs()) {
-                disableComponent(context, TouchscreenGestureSettings.class.getName());
+                disableComponent(context, DeviceSettings.class.getName());
             } else {
-                enableComponent(context, TouchscreenGestureSettings.class.getName());
+                enableComponent(context, DeviceSettings.class.getName());
                 // Restore nodes to saved preference values
                 for (String pref : Constants.sButtonPrefKeys) {
                     String value;

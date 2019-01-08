@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package com.oneplus.settings.device;
 
 
 import android.database.Cursor;
@@ -39,8 +39,8 @@ public class ConfigPanelSearchIndexablesProvider extends SearchIndexablesProvide
     public static final int SEARCH_IDX_TOUCHSCREEN_PANEL = 0;
 
     private static SearchIndexableResource[] INDEXABLE_RES = new SearchIndexableResource[]{
-            new SearchIndexableResource(1, R.xml.touchscreen_panel,
-                    TouchscreenGestureSettings.class.getName(),
+            new SearchIndexableResource(1, R.xml.device_settings,
+                    DeviceSettings.class.getName(),
                     R.drawable.ic_launcher_settings),
     };
 
@@ -65,7 +65,7 @@ public class ConfigPanelSearchIndexablesProvider extends SearchIndexablesProvide
         ref[COLUMN_INDEX_XML_RES_CLASS_NAME] = null;
         ref[COLUMN_INDEX_XML_RES_ICON_RESID] = sir.iconResId;
         ref[COLUMN_INDEX_XML_RES_INTENT_ACTION] = "com.android.settings.action.EXTRA_SETTINGS";
-        ref[COLUMN_INDEX_XML_RES_INTENT_TARGET_PACKAGE] = "com.cyanogenmod.settings.device";
+        ref[COLUMN_INDEX_XML_RES_INTENT_TARGET_PACKAGE] = "com.oneplus.settings.device";
         ref[COLUMN_INDEX_XML_RES_INTENT_TARGET_CLASS] = sir.className;
         return ref;
     }

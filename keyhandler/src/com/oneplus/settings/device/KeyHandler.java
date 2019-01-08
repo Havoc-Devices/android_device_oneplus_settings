@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package com.oneplus.settings.device;
 
 import android.app.ActivityManagerNative;
 import android.app.KeyguardManager;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device.utils;
+package com.oneplus.settings.device.utils;
 
 import java.util.HashMap;
 import java.util.Map;
