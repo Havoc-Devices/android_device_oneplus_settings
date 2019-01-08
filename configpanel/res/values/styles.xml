@@ -1,29 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2014-2015 The CyanogenMod Project
+   Copyright (c) 2019 Havoc-OS
 
-     Licensed under the Apache License, Version 2.0 (the "License"
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
 
-          http://www.apache.org/licenses/LICENSE-2.0
+       http://www.apache.org/licenses/LICENSE-2.0
 
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
 -->
 <resources>
-    <style name="Theme.Main" parent="@android:style/Theme.Material.Light.DarkActionBar">
-        <item name="android:colorPrimary">@color/theme_primary</item>
-        <item name="android:colorPrimaryDark">@color/theme_primary_dark</item>
-        <item name="android:colorAccent">@color/theme_accent</item>
-        <!-- Redefine the ActionBar style for contentInsetStart -->
-        <item name="android:actionBarStyle">@style/Theme.ActionBar.SubSettings</item>
+    <style name="SettingsTheme" parent="@android:style/Theme.DeviceDefault.Settings">
+        <item name="android:switchPreferenceStyle">@style/SettingsSwitchPreference</item>
+        <item name="android:checkBoxPreferenceStyle">@style/SettingsCheckBoxPreference</item>
+        <item name="android:preferenceCategoryStyle">@style/SettingsPreferenceCategory</item>
+        <item name="android:preferenceStyle">@style/SettingsPreference</item>
+        <item name="android:dialogPreferenceStyle">@style/SettingsDialogPreference</item>
+        <item name="android:preferenceScreenStyle">@style/SettingsPreferenceScreen</item>
+        <item name="android:dialogTheme">@*android:style/Theme.Material.Settings.BaseDialog</item>
+        <item name="android:alertDialogTheme">@*android:style/Theme.Material.Settings.Dialog.BaseAlert</item>
     </style>
 
-    <style name="Theme.ActionBar.SubSettings" parent="@android:style/Widget.Material.Light.ActionBar.Solid">
-        <item name="android:contentInsetStart">@dimen/actionbar_subsettings_contentInsetStart</item>
+    <!-- Preferences -->
+    <style name="SettingsPreference" parent="@*android:style/Preference.DeviceDefault">
+        <item name="android:singleLineTitle">false</item>
+        <item name="android:iconSpaceReserved">true</item>
     </style>
+
+    <style name="SettingsSwitchPreference" parent="@*android:style/Preference.DeviceDefault.SwitchPreference">
+        <item name="android:iconSpaceReserved">true</item>
+        <item name="android:singleLineTitle">false</item>
+    </style>
+
+    <style name="SettingsCheckBoxPreference" parent="@*android:style/Preference.DeviceDefault.CheckBoxPreference">
+        <item name="android:iconSpaceReserved">true</item>
+        <item name="android:singleLineTitle">false</item>
+    </style>
+
+    <style name="SettingsPreferenceCategory" parent="@*android:style/Preference.DeviceDefault.Category">
+        <item name="android:layout">@layout/preference_category_material_settings</item>
+    </style>
+
+    <style name="SettingsDialogPreference" parent="@*android:style/Preference.DeviceDefault.DialogPreference">
+        <item name="android:singleLineTitle">false</item>
+        <item name="android:iconSpaceReserved">true</item>
+    </style>
+
+    <style name="SettingsPreferenceScreen" parent="@*android:style/Preference.DeviceDefault.PreferenceScreen">
+        <item name="android:singleLineTitle">false</item>
+        <item name="android:iconSpaceReserved">true</item>
+    </style>
+
+    <style name="SettingsListPreference" parent="SettingsPreference"/>
 </resources>

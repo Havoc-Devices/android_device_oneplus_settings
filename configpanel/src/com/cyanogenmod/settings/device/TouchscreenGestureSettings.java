@@ -20,10 +20,13 @@ import com.cyanogenmod.settings.device.utils.NodePreferenceActivity;
 
 import org.cyanogenmod.internal.util.ScreenType;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.preference.Preference;
 import android.preference.SwitchPreference;
+import android.widget.ListView;
 
 public class TouchscreenGestureSettings extends NodePreferenceActivity {
     private static final String KEY_HAPTIC_FEEDBACK = "touchscreen_gesture_haptic_feedback";
@@ -34,6 +37,10 @@ public class TouchscreenGestureSettings extends NodePreferenceActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.touchscreen_panel);
+
+        ListView lv = getListView();
+        lv.setDivider(new ColorDrawable(Color.TRANSPARENT));
+        lv.setDividerHeight(0);
 
         mHapticFeedback = (SwitchPreference) findPreference(KEY_HAPTIC_FEEDBACK);
         mHapticFeedback.setOnPreferenceChangeListener(this);
