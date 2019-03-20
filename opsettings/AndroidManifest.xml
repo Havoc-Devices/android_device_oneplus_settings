@@ -21,6 +21,7 @@
           android:versionName="2.4" >
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.PRE_BOOT_COMPLETED" />    
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.INJECT_EVENTS"/>
 
