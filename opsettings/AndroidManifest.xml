@@ -64,16 +64,6 @@
                 android:resource="@string/screen_gestures_panel_summary" />
         </activity>
 
-        <activity
-            android:name="com.oneplus.settings.device.PanelSettingsActivity"
-            android:exported="false"
-            android:label="@string/panel_category_title" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
         <receiver android:name=".Startup" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -81,17 +71,6 @@
                 <action android:name="oneplus.intent.action.GESTURE_CAMERA" />
             </intent-filter>
         </receiver>
-
-        <service
-            android:name="com.oneplus.settings.device.HBMModeTileService"
-            android:icon="@drawable/ic_hbm_tile"
-            android:label="@string/hbm_mode_title"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action
-                    android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
 
         <activity android:name=".KeyHandler" />
     </application>

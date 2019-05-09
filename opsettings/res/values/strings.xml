@@ -45,17 +45,6 @@
     <string name="notification_slider_mode_vibration">Vibration</string>
     <string name="notification_slider_mode_none">None</string>
 
-    <!-- Screen calibration settings -->
-    <string name="graphics_title">Display</string>
-    <string name="panel_category_title">Screen Calibration</string>
-    <string name="panel_category_summary">Choose a custom display color profile</string>
-    <string name="off_mode_title">Default</string>
-    <string name="srgb_mode_title">sRGB</string>
-    <string name="dci_mode_title">DCI-P3</string>
-    <string name="night_mode_title">Neutral</string>
-    <string name="oneplus_mode_title">OnePlus</string>
-	<string name="hbm_mode_title">High Brightness mode</string>
-
     <!-- Spectrum Profiles -->
     <string name="spectrum_category_title">Spectrum</string>
     <string name="spectrum_title">Kernel Power Profile</string>
