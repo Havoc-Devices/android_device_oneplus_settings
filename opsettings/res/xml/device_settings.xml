@@ -63,7 +63,7 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="graphics"
         android:title="@string/graphics_title">
 
@@ -77,7 +77,7 @@
                     android:targetClass="com.oneplus.settings.device.PanelSettingsActivity" />
         </Preference>
 
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
     <PreferenceCategory
         android:title="@string/touchscreen_extras">
