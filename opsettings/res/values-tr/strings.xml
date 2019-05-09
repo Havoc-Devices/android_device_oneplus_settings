@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013-2014 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">OnePlus ayarları</string>
+
+    <!-- Gestures -->
+    <string name="screen_gestures_panel_title">Cihaz Ekstraları</string>
+    <string name="screen_gestures_panel_summary">Uyarı kaydırıcı, kapalı ekran hareketleri</string>
+    <string name="touchscreen_double_tap_gesture_title">Cihazı uyandır</string>
+    <string name="touchscreen_double_tap_gesture_summary">Cihazı uyandırmak için iki kez dokunun</string>
+    <string name="touchscreen_camera_gesture_title">Kamera</string>
+    <string name="touchscreen_camera_gesture_summary">Kamerayı etkinleştirmek için \"O\" çizin</string>
+    <string name="touchscreen_music_gesture_title">Müzik</string>
+    <string name="touchscreen_flashlight_gesture_title">El feneri</string>
+    <string name="touchscreen_flashlight_gesture_summary">El fenerini açıp kapatmak için \"V\" çizin</string>
+    <string name="touchscreen_music_gesture_summary">Müziği kontrol etmek için hareketleri kullanın \n• Oynatmak/duraklatmak için iki parmağınızı dikey olarak \"||\" kaydırın\n• Önceki parça için sol ok \"&#60;\" çizin\n• Bir sonraki parça için sağ ok \"&#62;\" çizin</string>
+
+    <!-- Haptic feedback  -->
+    <string name="touchscreen_extras">Hareketler</string>
+    <string name="haptic_feedback">Dokunsal geribildirim</string>
+    <string name="haptic_feedback_summary">Bir hareket algılandığında titret</string>
+
+    <!-- Alert slider settings -->
+    <string name="buttons_dashboard_summary">Uyarı kaydırıcı</string>
+    <string name="notification_slider_selection_dialog_title">Eylem</string>
+    <string name="notification_slider_top_position">Üst konum</string>
+    <string name="notification_slider_middle_position">Orta konum</string>
+    <string name="notification_slider_bottom_position">Alt konum</string>
+    <string name="notification_slider_mode_total_silence">Tamamen sessiz</string>
+    <string name="notification_slider_mode_priority_only">Yalnızca öncelikli olanlar</string>
+    <string name="notification_slider_mode_vibration">Titreşim</string>
+    <string name="notification_slider_mode_none">Tümü</string>
+
+    <!-- Screen calibration settings -->
+    <string name="graphics_title">Ekran</string>
+    <string name="panel_category_title">Ekran kalibrasyonu</string>
+    <string name="panel_category_summary">Özel bir ekran rengi profili seçin</string>
+    <string name="off_mode_title">Varsayılan</string>
+    <string name="srgb_mode_title">sRGB</string>
+    <string name="dci_mode_title">DCI-P3</string>
+    <string name="night_mode_title">Doğal</string>
+    <string name="oneplus_mode_title">OnePlus</string>
+    <string name="hbm_mode_title">Yüksek parlaklık modu</string>
+
+    <!-- Spectrum Profiles -->
+    <string name="spectrum_category_title">Spectrum</string>
+    <string name="spectrum_title">Çekirdek gücü profili</string>
+    <string name="spectrum_summary">%1$s</string>
+    <string name="spectrum_profile_battery">Pil</string>
+    <string name="spectrum_profile_balanced">Dengeli</string>
+    <string name="spectrum_profile_performance">Performans</string>
+    <string name="spectrum_profile_gaming">Oyun</string>
+
+    <!-- Notification slider -->
+    <string name="notification_slider_usage_title">Kaydırıcıyı kullanımı</string>
+    <string name="notification_slider_for_notification">Bildirim</string>
+    <string name="notification_slider_for_flashlight">El feneri</string>
+    <string name="notification_slider_for_brightness">Parlaklık</string>
+    <string name="notification_slider_for_rotation">Döndürme</string>
+    <string name="notification_slider_for_ringer">Zil sesi</string>
+    <string name="notification_slider_for_notification_ringer">Bildirim ve zil sesi</string>
+
+    <string name="notification_slider_flashlight_off">Kapat</string>
+    <string name="notification_slider_flashlight_on">Aç</string>
+    <string name="notification_slider_flashlight_blink">Yanıp sön</string>
+
+    <string name="notification_slider_brightness_auto">Otomatik</string>
+    <string name="notification_slider_brightness_brightest">En parlak</string>
+    <string name="notification_slider_brightness_darkest">En karanlık</string>
+
+    <string name="notification_slider_rotation_auto">Otomatik</string>
+    <string name="notification_slider_rotation_portrait">Dikey</string>
+    <string name="notification_slider_rotation_landscape_90">Yatay (90°)</string>
+    <string name="notification_slider_rotation_landscape_270">Yatay (270°)</string>
+
+    <string name="notification_slider_ringer_normal">Normal</string>
+    <string name="notification_slider_ringer_vibrate">Titreşim</string>
+    <string name="notification_slider_ringer_silent">Sessiz</string>
+</resources>
