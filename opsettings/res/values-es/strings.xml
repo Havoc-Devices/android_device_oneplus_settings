@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013-2014 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Configuración de OnePlus</string>
+
+    <!-- Gestures -->
+    <string name="screen_gestures_panel_title">Extras del dispositivo</string>
+    <string name="screen_gestures_panel_summary">Deslizador de notificaciones, Gestos con la pantalla apagada</string>
+    <string name="touchscreen_double_tap_gesture_title">Despertar dispositivo</string>
+    <string name="touchscreen_double_tap_gesture_summary">Tocar dos veces para despertar el dispositivo</string>
+    <string name="touchscreen_camera_gesture_title">Cámara</string>
+    <string name="touchscreen_camera_gesture_summary">Dibujar una \"O\" para activar la cámara</string>
+    <string name="touchscreen_music_gesture_title">Música</string>
+    <string name="touchscreen_flashlight_gesture_title">Linterna</string>
+    <string name="touchscreen_flashlight_gesture_summary">Dibujar una \"V\" para encender la linterna</string>
+    <string name="touchscreen_music_gesture_summary">Usar gestos para controlar la reproducción de música  \n• Deslizar dos dedos verticalmente \"||\" para reproducir/pausar\n• Dibujar una flecha hacia la izquierda \"&#60;\" para ir a la pista anterior\n• Dibujar una flecha hacia la derecha \"&#62;\" para ir a la pista siguiente</string>
+
+    <!-- Haptic feedback  -->
+    <string name="touchscreen_extras">Gestos</string>
+    <string name="haptic_feedback">Vibración</string>
+    <string name="haptic_feedback_summary">Vibrar cuando se detecta un gesto</string>
+
+    <!-- Alert slider settings -->
+    <string name="buttons_dashboard_summary">Deslizador de notificaciones</string>
+    <string name="notification_slider_selection_dialog_title">Acción</string>
+    <string name="notification_slider_top_position">Posición superior</string>
+    <string name="notification_slider_middle_position">Posición media</string>
+    <string name="notification_slider_bottom_position">Posición inferior</string>
+    <string name="notification_slider_mode_total_silence">Silencio total</string>
+    <string name="notification_slider_mode_priority_only">Solo alta prioridad</string>
+    <string name="notification_slider_mode_vibration">Vibración</string>
+    <string name="notification_slider_mode_none">Todo</string>
+
+    <!-- Screen calibration settings -->
+    <string name="graphics_title">Pantalla</string>
+    <string name="panel_category_title">Calibración de la pantalla</string>
+    <string name="panel_category_summary">Elige un perfil de colores personalizado</string>
+    <string name="off_mode_title">Por defecto</string>
+    <string name="srgb_mode_title">sRGB</string>
+    <string name="dci_mode_title">DCI-P3</string>
+    <string name="night_mode_title">Neutral</string>
+    <string name="oneplus_mode_title">OnePlus</string>
+	<string name="hbm_mode_title">Modo de brillo alto</string>
+
+    <!-- Spectrum Profiles -->
+    <string name="spectrum_category_title">Spectrum</string>
+    <string name="spectrum_title">Perfil de energía del kernel</string>
+    <string name="spectrum_summary">%1$s</string>
+    <string name="spectrum_profile_battery">Batería</string>
+    <string name="spectrum_profile_balanced">Balanceado</string>
+    <string name="spectrum_profile_performance">Rendimiento</string>
+    <string name="spectrum_profile_gaming">Juego</string>
+
+    <!-- Notification slider -->
+    <string name="notification_slider_usage_title">Usar el deslizador para</string>
+    <string name="notification_slider_for_notification">Notificaciones</string>
+    <string name="notification_slider_for_flashlight">Linterna</string>
+    <string name="notification_slider_for_brightness">Brillo</string>
+    <string name="notification_slider_for_rotation">Rotación</string>
+    <string name="notification_slider_for_ringer">Tono</string>
+    <string name="notification_slider_for_notification_ringer">Notificaciones y tono</string>
+
+    <string name="notification_slider_flashlight_off">Apagada</string>
+    <string name="notification_slider_flashlight_on">Encendida</string>
+    <string name="notification_slider_flashlight_blink">Parpadeo</string>
+
+    <string name="notification_slider_brightness_auto">Automático</string>
+    <string name="notification_slider_brightness_brightest">Alto</string>
+    <string name="notification_slider_brightness_darkest">Bajo</string>
+
+    <string name="notification_slider_rotation_auto">Automática</string>
+    <string name="notification_slider_rotation_portrait">Vertical</string>
+    <string name="notification_slider_rotation_landscape_90">Horizontal (90°)</string>
+    <string name="notification_slider_rotation_landscape_270">Horizontal (270°)</string>
+
+    <string name="notification_slider_ringer_normal">Normal</string>
+    <string name="notification_slider_ringer_vibrate">Vibración</string>
+    <string name="notification_slider_ringer_silent">Silencio</string>
+</resources>
