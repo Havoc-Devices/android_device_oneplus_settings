@@ -60,6 +60,10 @@
     <string name="spectrum_category_title">Spectrum</string>
     <string name="spectrum_title">Kernel Power Profile</string>
     <string name="spectrum_summary">%1$s</string>
+    <string name="spectrum_profile_battery">Battery</string>
+    <string name="spectrum_profile_balanced">Balanced</string>
+    <string name="spectrum_profile_performance">Performance</string>
+    <string name="spectrum_profile_gaming">Gaming</string>
 
     <!-- Notification slider -->
     <string name="notification_slider_usage_title">Use slider for</string>

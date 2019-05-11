@@ -18,10 +18,10 @@
 
     <!-- Spectrum profiles -->
     <string-array name="spectrum_profiles">
-        <item>Battery</item>
-        <item>Balanced</item>
-        <item>Performance</item>
-        <item>Gaming</item>
+        <item>@string/spectrum_profile_battery</item>
+        <item>@string/spectrum_profile_balanced</item>
+        <item>@string/spectrum_profile_performance</item>
+        <item>@string/spectrum_profile_gaming</item>
     </string-array>
 
     <string-array name="spectrum_values">
